@@ -1,0 +1,45 @@
+
+<nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+  <a class="navbar-brand" href="/">Movie Reviews</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/reviews/list">Reviews</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/reviews/add">Add Reviews</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+    <h1 class="display-4">Reviews</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% reviews.forEach(function(review){ %>
+                <tr>
+                    <td><%= review.id %></td>
+                    <td><%= review.title %></td>
+                    <td>
+                        <a href="/reviews/view/<%= review.id %>" class="btn btn-primary">View</a>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</div>
